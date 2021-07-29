@@ -2,6 +2,12 @@
 
 console.log('Hello');
 
+
+
+
+
+
+
 let hours = ['6 a.m.', '7 a.m.', '8 a.m.', '9 a.m.', '10 a.m.', '11 a.m.', '12 p.m.', '1 p.m.', '2 p.m.', '3 p.m.', '4 p.m.', '5 p.m.', '6 p.m.', '7 p.m.'];
 
 let seattle = {
@@ -34,23 +40,35 @@ let seattle = {
     let sum = 0;
     for (let i=0; i<hours.length; i++){
       sum +=this.hourlyCookies[i];
-      // This will need to be hourly cookies
     }
     console.log(sum);
   },
 
-  // hoursAndAvgCookiesSold: function (){
+  // storeName: function(){
+  //   let store = document.createElement('h2');
+  //   let storeName = `${this.name}`;
+  //   ul.appendChild(h2);
+  // },
+
+  // infoToPage: function (){
+    // Store hours and avg cookies sold
   //   // for loop to render the <li>'s
   // // hours array and the avg cookies sold array
+    
+    // for (let i=0; i<hours.length; i++){
+    //   let li = document.createElement('li');
+    //   let textContent = `$this.`
+    // }
   // }
 };
 
-
+console.log ("Seattle Store", seattle);
 seattle.randomCustomersPerHour();
 seattle.cookiesPerHour();
 seattle.dailyTotal();
+// seattle.storeName();
+// seattle.infoToPage();
 
-console.log ("Seattle Store", seattle);
 
 
 // let tokyo = {
