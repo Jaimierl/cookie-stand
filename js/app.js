@@ -12,7 +12,7 @@ let seattle = {
 
   hourlyCustomers:[],
   randomCustomersPerHour: function(){
-    console.log('hours::::::::',hours);
+    console.log('Store Hours:',hours);
     for (let i=0; i<hours.length; i++){
       let randomCustomers = Math.floor(Math.random() * (this.hourMaxCust - this.hourMinCust) + this.hourMinCust);
       this.hourlyCustomers.push(randomCustomers);
@@ -22,21 +22,26 @@ let seattle = {
 
   // hourlyCookies: [],
   // cookiesPerHour: function(){
-  //   let customerInHour = this.randomCustomersPerHour();
-  //   let cookiesInHour = Math.ceil(customerInHour*this.avgCookiesPurchased);
+  //   // let customersInHour = this.randomCustomersPerHour();
+  //   // let cookiesInHour = Math.ceil(customersInHour*this.avgCookiesPurchased);
+  //   console.log(this.hourlyCustomers);
+    
   //   for (let i=0; i<hours.length; i++){
+  //     let cookiesPerCustomer = this.avgCookiesPurchased;
+  //     cookiesPerCustomer *= this.hourlyCustomers[i];
+  //     this.hourlyCookies.push(hourlyCookies);
   //   }
-  //   console.log(cookiesInHour);
+  //   console.log(this.hourlyCookies);
   // },
 
-  // dailyTotal: function(){
-  //   let sum = 0;
-  //   for (let i=0; i<hours.length; i++){
-  //     sum +=this.hourlyCookies[i];
-  //   }
-  //   console.log(sum);
-  //   return (sum);
-  // },
+  dailyTotal: function(){
+    let sum = 0;
+    for (let i=0; i<hours.length; i++){
+      sum +=this.hourlyCustomers[i];
+      // This will need to be hourly cookies
+    }
+    console.log(sum);
+  },
 
   // hoursAndAvgCookiesSold: function (){
   //   // for loop to render the <li>'s
@@ -47,7 +52,7 @@ let seattle = {
 
 seattle.randomCustomersPerHour();
 // seattle.cookiesPerHour();
-// seattle.dailyTotal();
+seattle.dailyTotal();
 
 console.log ("Seattle Store", seattle);
 
