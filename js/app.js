@@ -1,24 +1,89 @@
-'use strict'
+'use strict';
 
 console.log('Hello');
 
+let hours = ['6 a.m.', '7 a.m.', '8 a.m.', '9 a.m.', '10 a.m.', '11 a.m.', '12 p.m.', '1 p.m.', '2 p.m.', '3 p.m.', '4 p.m.', '5 p.m.', '6 p.m.', '7 p.m.'];
+
 let seattle = {
   name: 'Seattle',
-  hourMin: 23,
-  hourMax: 65,
+  hourMinCust: 23,
+  hourMaxCust: 65,
   avgCookiesPurchased: 6.3,
-  hourlyCookies: [0,1,2],
-  dailyTotal: 0,
-  getRandomCustomer: function(){
-    return Math.floor(Math.random() * (this.max - this.min) + this.min); //The maximum is exclusive and the minimum is inclusive. Maybe a for loop with a push to the other things. Returns are useful for taking a value and resaving it as a variable to do something else
-  }
-}
 
-let rand  = seattle.getRandomCustomer();
-// This is the use of the return function.
+  hourlyCustomers:[],
+  randomCustomersPerHour: function(){
+    console.log('hours::::::::',hours);
+    for (let i=0; i<hours.length; i++){
+      let randomCustomers = Math.floor(Math.random() * (this.hourMaxCust - this.hourMinCust) + this.hourMinCust);
+      this.hourlyCustomers.push(randomCustomers);
+    }
+    console.log (this.hourlyCustomers);
+  },
 
-// Lets get a random integer inclusive from math.random. The floor thing keeps the number from being a decimal.
+  // hourlyCookies: [],
+  // cookiesPerHour: function(){
+  //   let customerInHour = this.randomCustomersPerHour();
+  //   let cookiesInHour = Math.ceil(customerInHour*this.avgCookiesPurchased);
+  //   for (let i=0; i<hours.length; i++){
+  //   }
+  //   console.log(cookiesInHour);
+  // },
 
-console.log(seattle.getRandomCustomer());
+  // dailyTotal: function(){
+  //   let sum = 0;
+  //   for (let i=0; i<hours.length; i++){
+  //     sum +=this.hourlyCookies[i];
+  //   }
+  //   console.log(sum);
+  //   return (sum);
+  // },
 
-// We then need to store this data so it can be referenced later. What about an array (see avgCookiesPerHour)
+  // hoursAndAvgCookiesSold: function (){
+  //   // for loop to render the <li>'s
+  // // hours array and the avg cookies sold array
+  // }
+};
+
+
+seattle.randomCustomersPerHour();
+// seattle.cookiesPerHour();
+// seattle.dailyTotal();
+
+console.log ("Seattle Store", seattle);
+
+
+// let tokyo = {
+//   name: 'Tokyo',
+//   hourMinCust: 3,
+//   hourMaxCust: 24,
+//   avgCookiesPurchased: 1.2,
+//   hourlyCookies: [],
+//   dailyTotal: 0,
+// }
+
+// let dubai = {
+//   name: 'Dubai',
+//   hourMinCust: 11,
+//   hourMaxCust: 38,
+//   avgCookiesPurchased: 3.7,
+//   hourlyCookies: [],
+//   dailyTotal: 0,
+// }
+
+// let paris = {
+//   name: 'Paris',
+//   hourMinCust: 20,
+//   hourMaxCust: 38,
+//   avgCookiesPurchased: 2.3,
+//   hourlyCookies: [],
+//   dailyTotal: 0,
+// }
+
+// let lima = {
+//   name: 'Lima',
+//   hourMinCust: 2,
+//   hourMaxCust: 16,
+//   avgCookiesPurchased: 4.6,
+//   hourlyCookies: [],
+//   dailyTotal: 0,
+// }
