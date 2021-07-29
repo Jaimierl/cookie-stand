@@ -2,10 +2,12 @@
 
 console.log('Hello');
 
+const profileContainer = document.getElementById('storeProfiles');
 
+console.log (profileContainer);
 
-
-
+let article = document.createElement('article');
+profileContainer.appendChild(article);
 
 
 let hours = ['6 a.m.', '7 a.m.', '8 a.m.', '9 a.m.', '10 a.m.', '11 a.m.', '12 p.m.', '1 p.m.', '2 p.m.', '3 p.m.', '4 p.m.', '5 p.m.', '6 p.m.', '7 p.m.'];
@@ -42,32 +44,45 @@ let seattle = {
       sum +=this.hourlyCookies[i];
     }
     console.log(sum);
+    return sum;
   },
 
-  // storeName: function(){
-  //   let store = document.createElement('h2');
-  //   let storeName = `${this.name}`;
-  //   ul.appendChild(h2);
-  // },
+  storeName: function(){
+    let store = document.createElement('h3');
+    store.textContent = `${this.name}`;
+    article.appendChild(store);
+  },
 
-  // infoToPage: function (){
-    // Store hours and avg cookies sold
-  //   // for loop to render the <li>'s
-  // // hours array and the avg cookies sold array
-    
-    // for (let i=0; i<hours.length; i++){
-    //   let li = document.createElement('li');
-    //   let textContent = `$this.`
-    // }
-  // }
+  tableTitle: function(){
+    let title = document.createElement('h4');
+    title.textContent = 'Store Hours, Average Customers, and Average Cookies Sold';
+    article.appendChild(title);
+  },
+
+  hoursAndCookiesList: function (){
+    for (let i=0; i<hours.length; i++){
+      console.log('hours:', hours, 'cookies', this.hourlyCookies);
+      let content = document.createElement('li');
+      content.textContent = `Time: ${hours[i]} Average Cookies Sold: ${this.hourlyCookies[i]}`;
+      article.appendChild(content);
+    }
+  },
+
+  totalCookies:function(){
+    let total = document.createElement('p');
+    total.textContent = `Total Cookies Sold : ${this.dailyTotal()}`;
+    article.appendChild(total);
+  }
 };
 
 console.log ("Seattle Store", seattle);
 seattle.randomCustomersPerHour();
 seattle.cookiesPerHour();
 seattle.dailyTotal();
-// seattle.storeName();
-// seattle.infoToPage();
+seattle.storeName();
+seattle.tableTitle();
+seattle.hoursAndCookiesList();
+seattle.totalCookies();
 
 
 
