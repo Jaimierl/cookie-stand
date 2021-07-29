@@ -20,24 +20,20 @@ let seattle = {
     console.log (this.hourlyCustomers);
   },
 
-  // hourlyCookies: [],
-  // cookiesPerHour: function(){
-  //   // let customersInHour = this.randomCustomersPerHour();
-  //   // let cookiesInHour = Math.ceil(customersInHour*this.avgCookiesPurchased);
-  //   console.log(this.hourlyCustomers);
-    
-  //   for (let i=0; i<hours.length; i++){
-  //     let cookiesPerCustomer = this.avgCookiesPurchased;
-  //     cookiesPerCustomer *= this.hourlyCustomers[i];
-  //     this.hourlyCookies.push(hourlyCookies);
-  //   }
-  //   console.log(this.hourlyCookies);
-  // },
+  hourlyCookies: [],
+  cookiesPerHour: function(){
+    console.log(this.hourlyCustomers);
+    for (let i=0; i<hours.length; i++){
+      let cookiesInHour = Math.ceil(this.hourlyCustomers[i]*this.avgCookiesPurchased);
+      this.hourlyCookies.push(cookiesInHour);
+    }
+    console.log(this.hourlyCookies);
+  },
 
   dailyTotal: function(){
     let sum = 0;
     for (let i=0; i<hours.length; i++){
-      sum +=this.hourlyCustomers[i];
+      sum +=this.hourlyCookies[i];
       // This will need to be hourly cookies
     }
     console.log(sum);
@@ -51,7 +47,7 @@ let seattle = {
 
 
 seattle.randomCustomersPerHour();
-// seattle.cookiesPerHour();
+seattle.cookiesPerHour();
 seattle.dailyTotal();
 
 console.log ("Seattle Store", seattle);
