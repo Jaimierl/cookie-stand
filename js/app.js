@@ -6,9 +6,23 @@ const profileContainer = document.getElementById('storeProfiles');
 
 console.log (profileContainer);
 
-let article = document.createElement('article');
-profileContainer.appendChild(article);
+// let article = document.createElement('article');
+// profileContainer.appendChild(article);
 
+let articleSeattle = document.createElement('article');
+profileContainer.appendChild(articleSeattle);
+
+let articleTokyo = document.createElement('article');
+profileContainer.appendChild(articleTokyo);
+
+let articleDubai = document.createElement('article');
+profileContainer.appendChild(articleDubai);
+
+let articleParis = document.createElement('article');
+profileContainer.appendChild(articleParis);
+
+let articleLima = document.createElement('article');
+profileContainer.appendChild(articleLima);
 
 let hours = ['6 a.m.', '7 a.m.', '8 a.m.', '9 a.m.', '10 a.m.', '11 a.m.', '12 p.m.', '1 p.m.', '2 p.m.', '3 p.m.', '4 p.m.', '5 p.m.', '6 p.m.', '7 p.m.'];
 
@@ -50,13 +64,13 @@ let seattle = {
   storeName: function(){
     let store = document.createElement('h2');
     store.textContent = `${this.name}`;
-    article.appendChild(store);
+    articleSeattle.appendChild(store);
   },
 
   tableTitle: function(){
     let title = document.createElement('h3');
     title.textContent = 'Store Hours, Average Customers, and Average Cookies Sold';
-    article.appendChild(title);
+    articleSeattle.appendChild(title);
   },
 
   hoursAndCookiesList: function (){
@@ -64,14 +78,14 @@ let seattle = {
       console.log('hours:', hours, 'cookies', this.hourlyCookies);
       let content = document.createElement('li');
       content.textContent = `Time: ${hours[i]} Average Cookies Sold: ${this.hourlyCookies[i]}`;
-      article.appendChild(content);
+      articleSeattle.appendChild(content);
     }
   },
 
   totalCookies:function(){
     let total = document.createElement('p');
     total.textContent = `Total Cookies Sold : ${this.dailyTotal()}`;
-    article.appendChild(total);
+    articleSeattle.appendChild(total);
   }
 };
 
@@ -123,13 +137,13 @@ let tokyo = {
   storeName: function(){
     let store = document.createElement('h2');
     store.textContent = `${this.name}`;
-    article.appendChild(store);
+    articleTokyo.appendChild(store);
   },
 
   tableTitle: function(){
     let title = document.createElement('h3');
     title.textContent = 'Store Hours, Average Customers, and Average Cookies Sold';
-    article.appendChild(title);
+    articleTokyo.appendChild(title);
   },
 
   hoursAndCookiesList: function (){
@@ -137,14 +151,14 @@ let tokyo = {
       console.log('hours:', hours, 'cookies', this.hourlyCookies);
       let content = document.createElement('li');
       content.textContent = `Time: ${hours[i]} Average Cookies Sold: ${this.hourlyCookies[i]}`;
-      article.appendChild(content);
+      articleTokyo.appendChild(content);
     }
   },
 
   totalCookies:function(){
     let total = document.createElement('p');
     total.textContent = `Total Cookies Sold : ${this.dailyTotal()}`;
-    article.appendChild(total);
+    articleTokyo.appendChild(total);
   }
 };
 
@@ -196,13 +210,13 @@ let dubai = {
   storeName: function(){
     let store = document.createElement('h2');
     store.textContent = `${this.name}`;
-    article.appendChild(store);
+    articleDubai.appendChild(store);
   },
 
   tableTitle: function(){
     let title = document.createElement('h3');
     title.textContent = 'Store Hours, Average Customers, and Average Cookies Sold';
-    article.appendChild(title);
+    articleDubai.appendChild(title);
   },
 
   hoursAndCookiesList: function (){
@@ -210,14 +224,14 @@ let dubai = {
       console.log('hours:', hours, 'cookies', this.hourlyCookies);
       let content = document.createElement('li');
       content.textContent = `Time: ${hours[i]} Average Cookies Sold: ${this.hourlyCookies[i]}`;
-      article.appendChild(content);
+      articleDubai.appendChild(content);
     }
   },
 
   totalCookies:function(){
     let total = document.createElement('p');
     total.textContent = `Total Cookies Sold : ${this.dailyTotal()}`;
-    article.appendChild(total);
+    articleDubai.appendChild(total);
   }
 };
 
@@ -268,13 +282,13 @@ let paris = {
   storeName: function(){
     let store = document.createElement('h2');
     store.textContent = `${this.name}`;
-    article.appendChild(store);
+    articleParis.appendChild(store);
   },
 
   tableTitle: function(){
     let title = document.createElement('h3');
     title.textContent = 'Store Hours, Average Customers, and Average Cookies Sold';
-    article.appendChild(title);
+    articleParis.appendChild(title);
   },
 
   hoursAndCookiesList: function (){
@@ -282,14 +296,14 @@ let paris = {
       console.log('hours:', hours, 'cookies', this.hourlyCookies);
       let content = document.createElement('li');
       content.textContent = `Time: ${hours[i]} Average Cookies Sold: ${this.hourlyCookies[i]}`;
-      article.appendChild(content);
+      articleParis.appendChild(content);
     }
   },
 
   totalCookies:function(){
     let total = document.createElement('p');
     total.textContent = `Total Cookies Sold : ${this.dailyTotal()}`;
-    article.appendChild(total);
+    articleParis.appendChild(total);
   }
 };
 
@@ -340,13 +354,13 @@ let lima = {
   storeName: function(){
     let store = document.createElement('h2');
     store.textContent = `${this.name}`;
-    article.appendChild(store);
+    articleLima.appendChild(store);
   },
 
   tableTitle: function(){
     let title = document.createElement('h3');
     title.textContent = 'Store Hours, Average Customers, and Average Cookies Sold';
-    article.appendChild(title);
+    articleLima.appendChild(title);
   },
 
   hoursAndCookiesList: function (){
@@ -354,14 +368,14 @@ let lima = {
       console.log('hours:', hours, 'cookies', this.hourlyCookies);
       let content = document.createElement('li');
       content.textContent = `Time: ${hours[i]} Average Cookies Sold: ${this.hourlyCookies[i]}`;
-      article.appendChild(content);
+      articleLima.appendChild(content);
     }
   },
 
   totalCookies:function(){
     let total = document.createElement('p');
     total.textContent = `Total Cookies Sold : ${this.dailyTotal()}`;
-    article.appendChild(total);
+    articleLima.appendChild(total);
   }
 };
 

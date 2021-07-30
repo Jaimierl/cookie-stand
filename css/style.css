@@ -1,9 +1,50 @@
 body{
-  background-color: #E7F2F8
-
-
+  background-color: #FFA384;
 }
 
-p {
-  color:purple
+.container {
+  background-color:#E7F2F8;
+  flex-direction:column;
+  display:flex;
+  align-items:center;
+}
+
+article{
+border: solid 10px #74BDCB;
+background-color:#EFE7BC;
+margin: 10px;
+padding: 30px;
+}
+
+
+h1{
+  font-size: 60px;
+  margin: 30px;
+  font-family: 'Style Script', cursive;
+  color: rgb(153, 131, 131)
+}
+
+h2{
+  font-size: 25px;
+  margin: 20px;
+}
+
+h3{
+  font-size: 20px;
+  margin: 20px;
+}
+
+li{
+  margin-left: 40px;
+  color: black;
+}
+
+p{
+  margin: 10px;
+  color: black;
+}
+
+footer {
+  margin: 20px;
+  font-size: 20px;
 }
