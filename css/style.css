@@ -16,6 +16,12 @@ margin: 10px;
 padding: 30px;
 }
 
+table {
+  border: solid 10px #74BDCB;
+  background-color:#EFE7BC;
+  margin: 10px;
+  padding: 30px;
+  }
 
 h1{
   font-size: 60px;
@@ -35,14 +41,17 @@ h3{
 }
 
 li{
+  font-family: 'Avant Garde', Helvetica, sans-serif;
   margin-left: 40px;
   color: black;
 }
 
 p{
+  font-family: Georgia, Times, 'Times New Roman', serif;
   margin: 10px;
   color: black;
 }
+
 
 footer {
   margin: 20px;
