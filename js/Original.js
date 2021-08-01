@@ -2,34 +2,8 @@
 
 console.log('Hello');
 
-const profileContainer = document.getElementById('storeProfiles');
-
-console.log (profileContainer);
-
-// let article = document.createElement('article');
-// profileContainer.appendChild(article);
-
-let articleSeattle = document.createElement('article');
-profileContainer.appendChild(articleSeattle);
-
-let articleTokyo = document.createElement('article');
-profileContainer.appendChild(articleTokyo);
-
-let articleDubai = document.createElement('article');
-profileContainer.appendChild(articleDubai);
-
-let articleParis = document.createElement('article');
-profileContainer.appendChild(articleParis);
-
-let articleLima = document.createElement('article');
-profileContainer.appendChild(articleLima);
-
 let seattle = {
-  name: 'Seattle',
-  hourMinCust: 23,
-  hourMaxCust: 65,
-  avgCookiesPurchased: 6.3,
-
+  
   hourlyCustomers:[],
   randomCustomersPerHour: function(){
     console.log('Store Hours:',hours);
@@ -94,5 +68,3 @@ seattle.storeName();
 seattle.tableTitle();
 seattle.hoursAndCookiesList();
 seattle.totalCookies();
-
-
