@@ -2,57 +2,26 @@
 
 console.log('Hello');
 
-let seattle = {
+Store.prototype.render = function(){
+  const storeTable = document.getElementById('storeProfiles');
+
+  let article = document.createElement('article');
+  storeTable.appendChild(article);
+
+  let tdName = document.createElement('td');
+  tdName.textContent = this.name;
+  article.appendChild(tdName);
   
-  hourlyCustomers:[],
-  randomCustomersPerHour: function(){
-    console.log('Store Hours:',hours);
-    for (let i=0; i<hours.length; i++){
-      let randomCustomers = Math.floor(Math.random() * (this.hourMaxCust - this.hourMinCust) + this.hourMinCust);
-      this.hourlyCustomers.push(randomCustomers);
-    }
-    console.log (this.hourlyCustomers);
-  },
+  for (let i=0; i<this.hourlyCookies.length; i++){
+    let td = document.createElement('td');
+    td.textContent = this.hourlyCookies[i];
+    article.appendChild(td);
+  }
+};
 
-  hourlyCookies: [],
-  cookiesPerHour: function(){
-    console.log(this.hourlyCustomers);
-    for (let i=0; i<hours.length; i++){
-      let cookiesInHour = Math.round(this.hourlyCustomers[i]*this.avgCookiesPurchased);
-      this.hourlyCookies.push(cookiesInHour);
-    }
-    console.log(this.hourlyCookies);
-  },
 
-  dailyTotal: function(){
-    let sum = 0;
-    for (let i=0; i<hours.length; i++){
-      sum +=this.hourlyCookies[i];
-    }
-    console.log(sum);
-    return sum;
-  },
 
-  storeName: function(){
-    let store = document.createElement('h2');
-    store.textContent = `${this.name}`;
-    articleSeattle.appendChild(store);
-  },
-
-  tableTitle: function(){
-    let title = document.createElement('h3');
-    title.textContent = 'Store Hours, Average Customers, and Average Cookies Sold';
-    articleSeattle.appendChild(title);
-  },
-
-  hoursAndCookiesList: function (){
-    for (let i=0; i<hours.length; i++){
-      console.log('hours:', hours, 'cookies', this.hourlyCookies);
-      let content = document.createElement('li');
-      content.textContent = `Time: ${hours[i]} Average Cookies Sold: ${this.hourlyCookies[i]}`;
-      articleSeattle.appendChild(content);
-    }
-  },
+let seattle = {
 
   totalCookies:function(){
     let total = document.createElement('p');
@@ -60,6 +29,8 @@ let seattle = {
     articleSeattle.appendChild(total);
   }
 };
+
+// Render function to call all of these. Currently chillin under Seattle.
 
 seattle.randomCustomersPerHour();
 seattle.cookiesPerHour();
