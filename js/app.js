@@ -101,28 +101,30 @@ function renderFoot(){
   tfName.textContent = 'Totals';
   footTr.appendChild(tfName);
 
-  
-  //   Above:
-  // this.allDailyStoreSum = 0;
 
   for (let i=0;i<hours.length; i++){
     let pants = 0;
     for (let j=0; j<storeArray.length; j++){
       pants += storeArray[j].hourlyCookies[i];
-      // push pants;
     }
     let tfCookies = document.createElement('td');
     tfCookies.textContent = pants;
     footTr.appendChild(tfCookies);
   }
+
   let train = 0;
-  for (let j=0; j<storeArray.length; j++){
-    train += storeArray[j].dailySum;
+  for (let i=0; i<storeArray.length; i++){
+    train += storeArray[i].dailySum;
   }
   let tfFinal = document.createElement('td');
   tfFinal.textContent = train;
   footTr.appendChild(tfFinal);
-};
+}
+
+// Here we need an array within an array. We need it to find all of the hours from one time across all of the stores. 
+// Then we need another beautiful disaster function to sum up all of the totals (dailySum). 
+// Both of these beauties need to live in the footer part of the table.
+
 // // Test Code
 // let test = document.createElement('h1');
 // test.textContent= 'Test';
