@@ -1,12 +1,27 @@
 body{
   background-color: #FFA384;
 }
+* {
+  box-sizing: border-box;
+}
+
+nav {
+  margin: 0 auto;
+  width: 1200px;
+  display: flex;
+}
+
+nav img{
+  max-width: 50%;
+  height: auto;
+}
 
 .container {
   background-color:#E7F2F8;
   flex-direction:column;
   display:flex;
   align-items:center;
+  width: 100%;
 }
 
 article{
@@ -23,9 +38,13 @@ h1{
   color: rgb(153, 131, 131)
 }
 
+nav h2{
+  margin 50px;
+}
+
 h2{
   font-size: 25px;
-  margin: 20px;
+  margin: 30px;
 }
 
 h3{
@@ -46,10 +65,10 @@ p{
 }
 
 
-footer {
+/* footer {
   margin: 20px;
   font-size: 20px;
-}
+} */
 
 th,td {
   border: 1px solid black;
