@@ -19,7 +19,39 @@
   <body>
     
     <section class="container" id = "storeProfiles">
-    
+      
+      <aside>
+        <form>
+          <fieldset>
+
+            <legend><h2>Add A Store!</h2></legend>
+               <!-- name, min, max, avg -->
+               <br>
+              <label>Store Name
+                <input type="text" name="storeName" required>
+              </label>
+              <br>
+              <label>Minimum Customers Per Hour
+                <input type="text" name="minCust" required>
+              </label>
+              <br>
+              <label>Maximum Customers Per Hour
+                <input type="text" name="maxCust" required>
+              </label>
+              <br>
+              <label>Average Cookies Purchased Per Customer
+                <input type="text" name="avgCust" required>
+              </label>
+
+          </fieldset>
+
+          <button type="submit"> Submit Store</button>
+
+        </form>
+      </aside>
+  
+
+      
       <table>
         <thead>
           <tr>

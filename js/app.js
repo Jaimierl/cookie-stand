@@ -68,7 +68,7 @@ function renderHead(){
   let thSum = document.createElement('th');
   thSum.textContent = 'Total Cookies Per Day';
   headTr.appendChild(thSum);
-};
+}
 
 Store.prototype.render = function(){
   const storeTable = document.querySelector('tbody');
@@ -95,6 +95,7 @@ function renderFoot(){
   const storeTable = document.querySelector('tbody');
 
   let footTr = document.createElement('tr');
+  footTr.setAttribute('id','tableFooter');
   storeTable.appendChild(footTr);
 
   let tfName = document.createElement('td');
@@ -121,8 +122,8 @@ function renderFoot(){
   footTr.appendChild(tfFinal);
 }
 
-// Here we need an array within an array. We need it to find all of the hours from one time across all of the stores. 
-// Then we need another beautiful disaster function to sum up all of the totals (dailySum). 
+// Here we need an array within an array. We need it to find all of the hours from one time across all of the stores.
+// Then we need another beautiful disaster function to sum up all of the totals (dailySum).
 // Both of these beauties need to live in the footer part of the table.
 
 // // Test Code
@@ -131,9 +132,7 @@ function renderFoot(){
 // storeTable.appendChild(test);
 
 
-
-
-let seattle = new Store(
+new Store(
   // name, min, max, avg
   'Seattle',
   23,
@@ -141,7 +140,7 @@ let seattle = new Store(
   6.3
 );
 
-let tokyo = new Store(
+new Store(
   // name, min, max, avg
   'Tokyo',
   3,
@@ -149,7 +148,7 @@ let tokyo = new Store(
   1.2
 );
 
-let dubai = new Store(
+new Store(
   // name, min, max, avg
   'Dubai',
   11,
@@ -158,7 +157,7 @@ let dubai = new Store(
 );
 
 
-let paris = new Store(
+new Store(
   // name, min, max, avg
   'Paris',
   20,
@@ -166,7 +165,7 @@ let paris = new Store(
   2.3
 );
 
-let lima = new Store(
+new Store(
   // name, min, max, avg
   'Lima',
   2,
@@ -189,3 +188,66 @@ function renderAll(){
 }
 
 renderAll();
+
+
+// Add Store Form
+// Step 1 - Grabbing the Info
+let storeForm = document.querySelector('form');
+
+// Step 3 - Formulas for what you would like to do with the information:
+
+function handleSubmit(event){
+  event.preventDefault();
+  let storeName = event.target.storeName.value;
+  let minCust = parseInt(event.target.minCust.value);
+  let maxCust = parseInt(event.target.maxCust.value);
+  let avgCust = parseInt(event.target.avgCust.value);
+
+  let newStore = new Store(
+    storeName,
+    minCust,
+    maxCust,
+    avgCust
+  );
+
+  console.log(newStore);
+  console.log(storeArray);
+  storeArray[storeArray.length-1].hourlyCustomersMath();
+  storeArray[storeArray.length-1].hourlyCookiesMath();
+  storeArray[storeArray.length-1].dailyTotal();
+  storeArray[storeArray.length-1].renderFormStore();
+
+  let recalculate = document.getElementById('tableFooter');
+  recalculate.remove();
+
+  renderFoot();
+}
+
+
+// Step 2- Telling the Program to incorporate the info:
+storeForm.addEventListener('submit', handleSubmit);
+
+
+
+Store.prototype.renderFormStore = function(){
+  const storeTable = document.querySelector('tbody');
+  let footer = document.getElementById('tableFooter');
+
+  let bodyTr = document.createElement('tr');
+  storeTable.insertBefore(bodyTr, footer);
+
+  let tdName = document.createElement('td');
+  tdName.textContent = this.name;
+  bodyTr.appendChild(tdName);
+
+  for (let i=0; i<this.hourlyCookies.length; i++){
+    let td = document.createElement('td');
+    td.textContent = this.hourlyCookies[i];
+    bodyTr.appendChild(td);
+  }
+
+  let tdSum = document.createElement('td');
+  tdSum.textContent = this.dailySum;
+  bodyTr.appendChild(tdSum);
+};
+
