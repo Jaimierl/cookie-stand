@@ -4,6 +4,9 @@ console.log ('Hello');
 
 let hours = ['6 a.m.', '7 a.m.', '8 a.m.', '9 a.m.', '10 a.m.', '11 a.m.', '12 p.m.', '1 p.m.', '2 p.m.', '3 p.m.', '4 p.m.', '5 p.m.', '6 p.m.', '7 p.m.'];
 
+// First we are going to build an array object. The store information will get pushed/stored here. 
+// We also have functions to calculate things based on the store information but due to their length we will create them later and add them with the prototype function.
+
 let storeArray = [];
 
 function Store(name, min, max, avg){
@@ -48,6 +51,8 @@ Store.prototype.dailyTotal = function(){
   console.log(sum);
   return sum;
 };
+
+// Here is where we begin our logic for building the table. We do it in three parts- head, body, and footer. Each part needs to be linked to the HTML aka. Appended to the DOM.
 
 function renderHead(){
   const storeTable = document.querySelector('tbody');
@@ -126,11 +131,13 @@ function renderFoot(){
 // Then we need another beautiful disaster function to sum up all of the totals (dailySum).
 // Both of these beauties need to live in the footer part of the table.
 
-// // Test Code
+// // Test Code - This was to see if we could append anything to the page.
 // let test = document.createElement('h1');
 // test.textContent= 'Test';
 // storeTable.appendChild(test);
 
+
+// Here we are defining our new functions for the table.
 
 new Store(
   // name, min, max, avg
@@ -156,7 +163,6 @@ new Store(
   3.7
 );
 
-
 new Store(
   // name, min, max, avg
   'Paris',
@@ -174,6 +180,8 @@ new Store(
 );
 
 
+// Here is where we are calling all of our functions. We have to do this so the math will run and the information will show up on the page.
+
 function renderAll(){
   // Here we need to call render header once before the for loop
   renderHead();
@@ -190,7 +198,8 @@ function renderAll(){
 renderAll();
 
 
-// Add Store Form
+// Add Store Form (Yes step 3 happens before step 2 in terms of how the function is written, the steps are in order of how the function gets read).
+
 // Step 1 - Grabbing the Info
 let storeForm = document.querySelector('form');
 
@@ -223,11 +232,11 @@ function handleSubmit(event){
   renderFoot();
 }
 
-
 // Step 2- Telling the Program to incorporate the info:
 storeForm.addEventListener('submit', handleSubmit);
 
 
+// We need to have a new area to render the function or make the new information show up on the page. Notice how we needed to give the footer an id (tableFooter) to place the new information ahead of it(below) and how we needed to remove the existing information in the footer to recalculate it in the render call above.
 
 Store.prototype.renderFormStore = function(){
   const storeTable = document.querySelector('tbody');
